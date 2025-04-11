@@ -1,5 +1,4 @@
-package WebClientConfig;
-
+package project_ApI.WebClientConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +11,5 @@ public class WebClientConfig {
     public WebClient.Builder webClientBuilder(){
         return WebClient.builder();
     }
-
 
 }
