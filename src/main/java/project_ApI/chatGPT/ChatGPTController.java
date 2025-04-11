@@ -22,9 +22,11 @@ public class ChatGPTController {
         return openAI_key;
     }
 
+
     @GetMapping("/test")
     public Map<String, Object> test(){
         Map<String, Object> testmap = chatGPTService.prompChatty();
     }
+
 
 }
