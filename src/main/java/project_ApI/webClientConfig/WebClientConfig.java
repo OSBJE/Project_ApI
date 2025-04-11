@@ -1,4 +1,4 @@
-package project_ApI.WebClientConfig;
+package project_ApI.webClientConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
