@@ -25,7 +25,11 @@ public class ChatGPTController {
 
     @GetMapping("/test")
     public Map<String, Object> test(){
-        Map<String, Object> testmap = chatGPTService.prompChatty();
+        Map<String, Object> testmap = chatGPTService.prompChatGPT();
+
+        System.out.println(testmap.get("Choices"));
+
+        return  testmap;
     }
 
 
