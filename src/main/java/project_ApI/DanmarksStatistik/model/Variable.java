@@ -23,24 +23,16 @@ public class Variable {
 
     @JsonProperty("code")
     private String code;
-
-
-
     @JsonProperty("values")
-    private String value;
     private List<String> values;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
-
-    public Variable(String code, String value){
-        this.code = code;
-        this.value = value;
-    }
 
     public Variable(String code, List<String> value){
         this.code = code;
         this.values = value;
     }
+
 
     @JsonProperty("code")
     public String getCode() {
@@ -72,13 +64,5 @@ public class Variable {
         this.additionalProperties.put(name, value);
     }
 
-    @JsonProperty("values")
-    public String getValue() {
-        return value;
-    }
 
-    @JsonProperty("values")
-    public void setValue(String value) {
-        this.value = value;
-    }
 }

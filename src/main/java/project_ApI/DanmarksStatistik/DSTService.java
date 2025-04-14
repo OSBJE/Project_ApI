@@ -23,6 +23,7 @@ public class DSTService {
 
     private final WebClient webClient;
 
+    @Autowired
     private DSTrepository dSTrepository;
 
     @Autowired
@@ -37,10 +38,16 @@ public class DSTService {
         requestDTO.setFormat("CSV");
 
 
+        List<String> formatList = new ArrayList<>();
+        formatList.add("CPA");
+
+        List<String>  pricevalueList = new ArrayList<>();
+        pricevalueList.add("LAN");
+
         List<Variable> listVar = new ArrayList<>();
 
-        Variable format = new Variable("FORMAAL", "CPA");
-        Variable prisEnhed = new Variable("PRISENHED", "LAN");
+        Variable format = new Variable("FORMAAAL", formatList);
+        Variable prisEnhed = new Variable("PRISENHED", pricevalueList);
 
         List<String> dateList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
@@ -53,6 +60,8 @@ public class DSTService {
         listVar.add(format);
         listVar.add(prisEnhed);
         listVar.add(timeSerie);
+
+        requestDTO.setVariables(listVar);
 
         return requestDTO;
     }
@@ -77,9 +86,21 @@ public class DSTService {
                 String[] parts = line.split(";");
                 if (parts.length == 4){
                     obj.setFormatCode(parts[0]);
-                    obj.setYear(Integer.parseInt(parts[1]));
-                    obj.setIndexPrice(Integer.parseInt(parts[2]));
+                    System.out.println("Split 0 format:    " + parts[0]);
+
+                    String[] indexPrices = parts[1].split(",");
+                    obj.setIndexPrice(indexPrices[0]);
+                    System.out.println("Split 1  index price:    " + parts[1]);
+
+                    obj.setYear(Integer.parseInt(parts[2]));
+                    System.out.println("Split 2  year:    " + parts[2]);
+
                     obj.setAmount(Integer.parseInt(parts[3]));
+                    System.out.println("Split 3:    " + parts[3]);
+
+
+
+
                 }
                 dSTrepository.save(obj);
             }

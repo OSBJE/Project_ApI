@@ -7,4 +7,5 @@ import project_ApI.DanmarksStatistik.model.DSTmodel01;
 
 @Repository
 public interface DSTrepository extends JpaRepository<DSTmodel01, Integer> {
+
 }

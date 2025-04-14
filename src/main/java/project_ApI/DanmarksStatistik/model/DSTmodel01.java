@@ -1,21 +1,22 @@
 package project_ApI.DanmarksStatistik.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class DSTmodel01 {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String formatCode;
+    @Column(name = "year_value")
     private int year;
-    private int indexPrice;
+    private String indexPrice;
     private int amount;
 
 
-    public DSTmodel01 (String formatCode, int year, int indexPrice, int amount){
+    public DSTmodel01 (String formatCode, int year, String indexPrice, int amount){
         this.formatCode = formatCode;
         this.year = year;
         this.indexPrice = indexPrice;
@@ -40,11 +41,11 @@ public class DSTmodel01 {
         this.year = year;
     }
 
-    public int getIndexPrice() {
+    public String getIndexPrice() {
         return indexPrice;
     }
 
-    public void setIndexPrice(int indexPrice) {
+    public void setIndexPrice(String indexPrice) {
         this.indexPrice = indexPrice;
     }
 
