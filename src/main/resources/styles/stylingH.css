@@ -1,0 +1,23 @@
+#site-header {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    background-color: lightblue;
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+    height: 35%; /* Adjust size */
+    width: 35%;
+    border-radius: 15px;
+    border: 2px solid black;
+}

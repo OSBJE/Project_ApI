@@ -1,0 +1,16 @@
+#site-footer {
+    background-color: lightblue;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+}
+
+.order {
+    max-width: 800px;
+    margin: 2px auto;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}

@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project:ApI</title>
+    <link rel="indexStyle" href="styles/indexStyle.css" />
+    <script defer src="JavaScript/HeaderAndFooter/HeaderAndFooter.js"></script>
 </head>
-<body>
 
-</body>
+
+    <div id="header-container"></div> <!-- Placeholder for header -->
+
+
+        <body>
+            <div class="chat-grid">
+                <!-- Left side (optional) -->
+                <div class="left-panel">
+                    <!-- You can leave this blank or put some info here later -->
+                </div>
+
+                <!-- Right side (chat controls) -->
+                <div class="right-panel">
+                    <textarea id="user-input" placeholder="Enter your prompt..." rows="5"></textarea>
+                    <button id="send-btn">Send</button>
+
+                    <div id="response-box">
+                        <p id="response-text">Response will appear here...</p>
+                    </div>
+                </div>
+            </div>
+
+        </body>
+
+    <footer id="footer-container"></footer>
+
+
 </html>
